@@ -3,7 +3,7 @@ import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   return (
     <nav className="navbarMainContainer flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:justify-between lg:mt-3">
       <div>
