@@ -7,7 +7,13 @@ const Navbar = () => {
   return (
     <nav className="navbarMainContainer flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:justify-between lg:mt-3">
       <div>
-        <h1 className="text-sky-500 text-3xl p-3 ">PORTFOLIO</h1>
+        <h1
+          className="
+        text-sky-500 text-3xl p-3
+         "
+        >
+          PORTFOLIO
+        </h1>
       </div>
 
       <div>
