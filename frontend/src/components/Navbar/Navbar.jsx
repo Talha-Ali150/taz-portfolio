@@ -38,16 +38,36 @@ const Navbar = () => {
           isMobile && "hidden"
         } flex flex-col w-[100vw] items-center lg:flex lg:flex-row lg:justify-around lg:p-3 lg:w-[60vw]`}
       >
-        <li className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300">
+        <li
+          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
+          onClick={() => {
+            window.location.href = "#about";
+          }}
+        >
           About
         </li>
-        <li className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300">
+        <li
+          onClick={() => {
+            window.location.href = "#experience";
+          }}
+          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
+        >
           Experience
         </li>
-        <li className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300">
+        <li
+          onClick={() => {
+            window.location.href = "#projects";
+          }}
+          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
+        >
           Projects
         </li>
-        <li className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300">
+        <li
+          onClick={() => {
+            window.location.href = "#contact";
+          }}
+          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
+        >
           Contact
         </li>
       </ul>

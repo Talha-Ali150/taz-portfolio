@@ -10,7 +10,7 @@ import Heading from "../Heading/Heading";
 
 const ExperienceSection = () => {
   return (
-    <>
+    <div id="experience">
       <Heading heading={`EXPERIENCE`} />
       <div className="experienceSectionMainContainer w-[90vw] mx-auto">
         <div className=" text-white bg-gradient-to-r from-black to-blue-500 rounded-2xl w-[100%]  flex flex-col items-center  lg:flex lg:flex-row lg:justify-around  lg:w-[70vw] lg:mx-auto lg:flex-wrap">
@@ -44,7 +44,7 @@ const ExperienceSection = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

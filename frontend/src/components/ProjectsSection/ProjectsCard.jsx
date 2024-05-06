@@ -1,22 +1,20 @@
 import React from "react";
 
-const ProjectsCard = () => {
+const ProjectsCard = ({ item }) => {
   return (
-    <div className="text-white projectsCardMainContainer bg-gradient-to-r from-black to-blue-500 w-[400px] h-[400px]  flex flex-col items-center rounded-xl">
+    <div className="text-white projectsCardMainContainer bg-gradient-to-r from-black to-blue-500 w-[300px] h-[400px]  flex flex-col items-center rounded-xl my-3 mx-5">
       <img
-        className="rounded-xl mt-3 w-[300px] h-[200px] "
+        className="rounded-xl mt-3 w-[280px] h-[200px] "
         alt="project thumbnail"
-        src={require("../../assets/pic1.png")}
+        src={item.pic}
       />
-      <p className="mt-5">Turo Frontend</p>
-      <p className="my-3 w-[80%] mx-auto">
-        This is a project made to explore antd library and media queries.
-      </p>
+      <p className="mt-5">{item.heading}</p>
+      <p className="my-3 w-[80%] mx-auto">{item.para}</p>
       <div>
         <button
           className="p-2 mx-3 bg-black rounded-xl"
           onClick={() => {
-            window.open("https://turo.vercel.app","_blank");
+            window.open(`${item.demoLink}`, "_blank");
           }}
         >
           Demo
@@ -24,7 +22,7 @@ const ProjectsCard = () => {
         <button
           className="p-2 mx-3 bg-black rounded-xl"
           onClick={() => {
-            window.open("https://github.com/Talha-Ali150/turo", "_blank");
+            window.open(`${item.sourceLink}`, "_blank");
           }}
         >
           Source
