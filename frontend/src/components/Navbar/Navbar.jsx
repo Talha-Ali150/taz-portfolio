@@ -8,9 +8,12 @@ const Navbar = () => {
     <nav className="navbarMainContainer flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:justify-between lg:mt-3">
       <div>
         <h1
-          className="
-        text-sky-500 text-3xl p-3
-         "
+          style={{
+            background: "linear-gradient(to right, #02050a, #3a7ff2)",
+            color: "transparent",
+            WebkitBackgroundClip: "text",
+          }}
+          className="text-3xl p-3"
         >
           PORTFOLIO
         </h1>
