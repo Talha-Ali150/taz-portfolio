@@ -22,6 +22,9 @@ const ProjectsCard = ({ item }) => {
         <button
           className="p-2 mx-3 bg-black rounded-xl"
           onClick={() => {
+            if (!item.sourceLink) {
+              return window.alert("client did not allow to share source code");
+            }
             window.open(`${item.sourceLink}`, "_blank");
           }}
         >
