@@ -26,6 +26,20 @@ const ProjectsSection = () => {
       // sourceLink: "https://github.com/Talha-Ali150/turo",
     },
     {
+      pic: require("../../assets/pic9.png"),
+      heading: "Realtime Chat App",
+      para: "realtime chat app made using firebase",
+      demoLink: "https://realtime-chat-app-khaki-five.vercel.app/login",
+      sourceLink: "https://github.com/Talha-Ali150/realtime-chat-app",
+    },
+    {
+      pic: require("../../assets/pic8.png"),
+      heading: "TO-DO Notes",
+      para: "TO-DO notes made using MERN.",
+      demoLink: "https://mern-notes-frontend-pink.vercel.app",
+      sourceLink: "https://github.com/Talha-Ali150/mern-notes",
+    },
+    {
       pic: require("../../assets/pic4.png"),
       heading: "Calculator",
       para: "Calculator made using HTML,CSS and JS.",
@@ -53,18 +67,14 @@ const ProjectsSection = () => {
       demoLink: "https://tic-tac-toe-game-psi-jet.vercel.app",
       sourceLink: "https://github.com/Talha-Ali150/tic-tac-toe-game",
     },
-    {
-      pic: require("../../assets/pic8.png"),
-      heading: "TO-DO Notes",
-      para: "TO-DO notes made using MERN.",
-      demoLink: "https://mern-notes-frontend-pink.vercel.app",
-      sourceLink: "https://github.com/Talha-Ali150/mern-notes",
-    },
   ];
   return (
     <div id="projects">
       <Heading heading={`PROJECTS`} />
-      <div className="projectsSectionMainContainer flex flex-col justify-center w-[70%] mx-auto lg:flex lg:flex-row lg:flex-wrap">
+      <div
+        className="projectsSectionMainContainer flex flex-col items-center
+      "
+      >
         {data.map((item, index) => {
           return <ProjectsCard item={item} key={index} />;
         })}
