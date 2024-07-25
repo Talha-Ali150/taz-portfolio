@@ -6,6 +6,11 @@ import { SiNodedotjs } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { SiFirebase } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
+import { SiPython } from "react-icons/si";
+import { SiDjango } from "react-icons/si";
+import { SiGraphql } from "react-icons/si";
+import { SiJavascript } from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
 import Heading from "../Heading/Heading";
 
 const ExperienceSection = () => {
@@ -23,8 +28,20 @@ const ExperienceSection = () => {
             <p className="text-2xl font-medium">CSS</p>
           </div>
           <div className="flex flex-col items-center">
+            <SiTailwindcss className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
+            <p className="text-2xl font-medium">TAILWIND CSS</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiJavascript className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
+            <p className="text-2xl font-medium">JS</p>
+          </div>
+          <div className="flex flex-col items-center">
             <SiReact className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
             <p className="text-2xl font-medium">REACT</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiReact className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
+            <p className="text-2xl font-medium">REACT NATIVE</p>
           </div>
           <div className="flex flex-col items-center">
             <SiNodedotjs className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
@@ -35,12 +52,24 @@ const ExperienceSection = () => {
             <p className="text-2xl font-medium">EXPRESS</p>
           </div>
           <div className="flex flex-col items-center">
+            <SiPython className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
+            <p className="text-2xl font-medium">PYTHON</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiDjango className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
+            <p className="text-2xl font-medium">DJANGO</p>
+          </div>
+          <div className="flex flex-col items-center">
             <SiMongodb className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
             <p className="text-2xl font-medium">MONGODB</p>
           </div>
           <div className="flex flex-col items-center">
             <SiFirebase className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
             <p className="text-2xl font-medium">FIREBASE</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <SiGraphql className="my-3 mx-5 text-9xl text-white bg-black rounded-full" />
+            <p className="text-2xl font-medium">GRAPHQL</p>
           </div>
         </div>
       </div>
