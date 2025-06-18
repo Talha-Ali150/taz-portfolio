@@ -39,34 +39,34 @@ const ProjectsSection = () => {
       demoLink: "https://mern-notes-frontend-pink.vercel.app",
       sourceLink: "https://github.com/Talha-Ali150/mern-notes",
     },
-    {
-      pic: require("../../assets/pic4.png"),
-      heading: "Calculator",
-      para: "Calculator made using HTML,CSS and JS.",
-      demoLink: "https://calculator-mu-amber-32.vercel.app",
-      sourceLink: "https://github.com/Talha-Ali150/calculator",
-    },
-    {
-      pic: require("../../assets/pic5.png"),
-      heading: "TO-DO Notes",
-      para: "TO-DO Notes using HTML,CSS and JS.",
-      demoLink: "https://todo-notes-sigma.vercel.app",
-      sourceLink: "https://github.com/Talha-Ali150/todo_notes",
-    },
-    {
-      pic: require("../../assets/pic6.png"),
-      heading: "Memory Game",
-      para: "Memory Game made using HTML,CSS and JS.",
-      demoLink: "https://memory-game-ruby-rho.vercel.app",
-      sourceLink: "https://github.com/Talha-Ali150/memory_game",
-    },
-    {
-      pic: require("../../assets/pic7.png"),
-      heading: "Tic-Tac-Toe Game",
-      para: "Tic-Tac-Toe Game made using ReactJS.",
-      demoLink: "https://tic-tac-toe-game-psi-jet.vercel.app",
-      sourceLink: "https://github.com/Talha-Ali150/tic-tac-toe-game",
-    },
+    // {
+    //   pic: require("../../assets/pic4.png"),
+    //   heading: "Calculator",
+    //   para: "Calculator made using HTML,CSS and JS.",
+    //   demoLink: "https://calculator-mu-amber-32.vercel.app",
+    //   sourceLink: "https://github.com/Talha-Ali150/calculator",
+    // },
+    // {
+    //   pic: require("../../assets/pic5.png"),
+    //   heading: "TO-DO Notes",
+    //   para: "TO-DO Notes using HTML,CSS and JS.",
+    //   demoLink: "https://todo-notes-sigma.vercel.app",
+    //   sourceLink: "https://github.com/Talha-Ali150/todo_notes",
+    // },
+    // {
+    //   pic: require("../../assets/pic6.png"),
+    //   heading: "Memory Game",
+    //   para: "Memory Game made using HTML,CSS and JS.",
+    //   demoLink: "https://memory-game-ruby-rho.vercel.app",
+    //   sourceLink: "https://github.com/Talha-Ali150/memory_game",
+    // },
+    // {
+    //   pic: require("../../assets/pic7.png"),
+    //   heading: "Tic-Tac-Toe Game",
+    //   para: "Tic-Tac-Toe Game made using ReactJS.",
+    //   demoLink: "https://tic-tac-toe-game-psi-jet.vercel.app",
+    //   sourceLink: "https://github.com/Talha-Ali150/tic-tac-toe-game",
+    // },
   ];
   return (
     <div id="projects">
