@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div>
         <p className="text-7xl my-5">Hi, I'm Talha</p>
         <p className="text-3xl my-5">
-          I'm a MERN stack developer with 6 months of experience.
+          I'm a MERN stack developer with over 1 year of experience.
         </p>
         <p className="text-3xl my-5">Reach out if you'd like to learn more!</p>
         <button
