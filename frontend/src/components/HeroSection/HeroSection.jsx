@@ -20,9 +20,9 @@ const HeroSection = () => {
       </div>
       <div>
         <img
-          src={require("../../assets/avatar.jpg")}
+          src={require("../../assets/propic.jpg")}
           alt="my hero section avatar"
-          className="w-[500px] h-[300px]"
+          className="w-[500px] h-[300px] rounded-full"
         />
       </div>
     </div>
