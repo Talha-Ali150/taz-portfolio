@@ -1,77 +1,47 @@
 import React, { useState } from "react";
-import { IoMenu } from "react-icons/io5";
-import { IoClose } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
+import { usePortfolioContent } from "../../data/PortfolioContext";
+import ThemeToggle from "../../theme/ThemeToggle";
+
+const links = [
+  ["About", "#about", "about"],
+  ["Experience", "#experience", "skills"],
+  ["Projects", "#projects", "projects"],
+  ["Contact", "#contact", "contact"],
+];
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { profile, sections } = usePortfolioContent();
+
   return (
-    <nav className="navbarMainContainer flex flex-col items-center lg:flex lg:flex-row lg:items-center lg:justify-between lg:mt-3">
-      <div>
-        <h1
-          style={{
-            background: "linear-gradient(to right, #02050a, #3a7ff2)",
-            color: "transparent",
-            WebkitBackgroundClip: "text",
-          }}
-          className="text-3xl p-3"
-        >
-          PORTFOLIO
-        </h1>
-      </div>
-
-      <div>
-        {isMobile ? (
-          <IoMenu
-            className="text-5xl lg:hidden"
-            onClick={() => setIsMobile(!isMobile)}
-          />
-        ) : (
-          <IoClose
-            className="text-5xl lg:hidden"
-            onClick={() => setIsMobile(!isMobile)}
-          />
-        )}
-      </div>
-
-      <ul
-        className={` ${
-          isMobile && "hidden"
-        } flex flex-col w-[100vw] items-center lg:flex lg:flex-row lg:justify-around lg:p-3 lg:w-[60vw]`}
-      >
-        <li
-          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
-          onClick={() => {
-            window.location.href = "#about";
-          }}
-        >
-          About
-        </li>
-        <li
-          onClick={() => {
-            window.location.href = "#experience";
-          }}
-          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
-        >
-          Experience
-        </li>
-        <li
-          onClick={() => {
-            window.location.href = "#projects";
-          }}
-          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
-        >
-          Projects
-        </li>
-        <li
-          onClick={() => {
-            window.location.href = "#contact";
-          }}
-          className="my-1 cursor-pointer text-2xl  font-medium hover:font-bold hover:text-black transition-all duration-300"
-        >
-          Contact
-        </li>
-      </ul>
-    </nav>
+    <header className="site-header">
+      <nav className="navbar" aria-label="Main navigation">
+        <a className="brand" href="#home" onClick={() => setMenuOpen(false)}>
+          {profile.name.split(" ")[0].toUpperCase()}<span>.</span>
+        </a>
+        <ul id="primary-navigation" className={`nav-links${menuOpen ? " is-open" : ""}`}>
+          {links.filter(([, , section]) => sections[section]).map(([label, href]) => (
+            <li key={href}>
+              <a href={href} onClick={() => setMenuOpen(false)}>{label}</a>
+            </li>
+          ))}
+        </ul>
+        <div className="navbar-controls">
+          <ThemeToggle />
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <IoClose aria-hidden="true" /> : <IoMenu aria-hidden="true" />}
+          </button>
+        </div>
+      </nav>
+    </header>
   );
 };
 

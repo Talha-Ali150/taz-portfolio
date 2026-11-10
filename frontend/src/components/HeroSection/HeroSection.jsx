@@ -1,31 +1,26 @@
 import React from "react";
+import { usePortfolioContent } from "../../data/PortfolioContext";
 
 const HeroSection = () => {
+  const { profile, headings, sections } = usePortfolioContent();
   return (
-    <div className="heroSectionMainContainer  p-5 flex flex-col-reverse w-[80vw] mx-auto md:w-[70vw] lg:flex lg:flex-row lg:w-[60vw] lg:mx-auto lg:items-center">
-      <div>
-        <p className="text-7xl my-5">Hi, I'm Talha</p>
-        <p className="text-3xl my-5">
-          I'm a MERN stack developer with over 1 year of experience.
-        </p>
-        <p className="text-3xl my-5">Reach out if you'd like to learn more!</p>
-        <button
-          className="text-3xl my-5 bg-black text-white p-4 rounded-3xl"
-          onClick={() => {
-            window.location.href = "mailto:syed.talha.ali.150@gmail.com";
-          }}
-        >
-          Contact Me
-        </button>
-      </div>
-      <div>
-        <img
-          src={require("../../assets/propic.jpg")}
-          alt="my hero section avatar"
-          className="w-[500px] h-[300px] rounded-full"
-        />
+  <section className="hero section-shell" id="home" aria-labelledby="hero-title">
+    <div className="hero-copy">
+      <p className="eyebrow"><span className="status-dot" /> {profile.availability}</p>
+      <h1 id="hero-title">Hi, I’m <span>{profile.name.split(" ")[0]}.</span></h1>
+      <p className="hero-role">{profile.role}</p>
+      <p className="hero-summary">{profile.summary}</p>
+      <div className="hero-actions">
+        <a className="button button-primary" href={`mailto:${profile.email}`}>{headings.heroCta} <span aria-hidden="true">↗</span></a>
+        {sections.projects && <a className="button button-quiet" href="#projects">{headings.workCta} <span aria-hidden="true">↓</span></a>}
       </div>
     </div>
+    <div className="hero-visual">
+      <div className="hero-orbit" aria-hidden="true" />
+      <img src={profile.portrait} alt={profile.name} />
+      <span className="hero-caption">full-stack developer · {profile.location}</span>
+    </div>
+  </section>
   );
 };
 

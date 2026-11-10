@@ -1,11 +1,10 @@
 import React from "react";
 
-const Heading = ({ heading }) => {
-  return (
-    <div className="w-[90vw]  mx-auto my-5 lg:w-[70vw] lg:mx-auto">
-      <p className="font-medium text-4xl">{heading}</p>
-    </div>
-  );
-};
+const Heading = ({ heading, kicker, id }) => (
+  <div className="section-heading">
+    {kicker && <p className="eyebrow">{kicker}</p>}
+    <h2 id={id}>{heading}</h2>
+  </div>
+);
 
 export default Heading;
