@@ -20,8 +20,17 @@ if (missingEnv.length) {
 }
 
 const app = express();
-const frontendOrigin = process.env.FRONTEND_ORIGIN || "http://localhost:3000";
 const production = process.env.NODE_ENV === "production";
+const frontendOrigins = new Set(
+  (process.env.FRONTEND_ORIGIN || "http://localhost:3000")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean)
+);
+if (!production) {
+  frontendOrigins.add("http://localhost:3000");
+  frontendOrigins.add("http://127.0.0.1:3000");
+}
 const cloudinaryConfigured = Boolean(process.env.CLOUDINARY_CLOUD_NAME && process.env.CLOUDINARY_API_KEY && process.env.CLOUDINARY_API_SECRET);
 if (cloudinaryConfigured) {
   cloudinary.config({
@@ -39,7 +48,7 @@ const PortfolioContent = mongoose.models.PortfolioContent || mongoose.model("Por
 
 if (production) app.set("trust proxy", 1);
 app.use(helmet());
-app.use(cors({ origin: frontendOrigin, credentials: true }));
+app.use(cors({ origin: [...frontendOrigins], credentials: true }));
 app.use(express.json({ limit: "2mb" }));
 app.use(session({
   name: "portfolio_admin",

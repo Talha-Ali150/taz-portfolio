@@ -23,7 +23,7 @@ import {
   FiZap,
 } from "react-icons/fi";
 import {
-  SiCss3,
+  SiCss,
   SiDjango,
   SiExpress,
   SiFirebase,
@@ -40,7 +40,7 @@ import {
 export const skillIconOptions = [
   { key: "code", label: "Code", Icon: FiCode },
   { key: "html5", label: "HTML5", Icon: SiHtml5 },
-  { key: "css3", label: "CSS3", Icon: SiCss3 },
+  { key: "css3", label: "CSS3", Icon: SiCss },
   { key: "tailwind", label: "Tailwind CSS", Icon: SiTailwindcss },
   { key: "javascript", label: "JavaScript", Icon: SiJavascript },
   { key: "react", label: "React", Icon: SiReact },

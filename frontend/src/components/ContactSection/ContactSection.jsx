@@ -1,5 +1,6 @@
 import React from "react";
-import { SiGmail, SiLinkedin, SiGithub } from "react-icons/si";
+import { SiGmail, SiGithub } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 import { usePortfolioContent } from "../../data/PortfolioContext";
 
 const ContactSection = () => {
@@ -10,7 +11,7 @@ const ContactSection = () => {
         <div><p className="eyebrow">GET IN TOUCH</p><h2 id="contact-heading">{headings.contact}</h2><p className="contact-copy">{headings.contactNote}</p></div>
         <div className="contact-links">
           <a href={`mailto:${profile.email}`}><SiGmail aria-hidden="true" />Email me <span aria-hidden="true">↗</span></a>
-          <a href={profile.linkedIn} target="_blank" rel="noopener noreferrer"><SiLinkedin aria-hidden="true" />LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href={profile.linkedIn} target="_blank" rel="noopener noreferrer"><FaLinkedin aria-hidden="true" />LinkedIn <span aria-hidden="true">↗</span></a>
           <a href={profile.github} target="_blank" rel="noopener noreferrer"><SiGithub aria-hidden="true" />GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
