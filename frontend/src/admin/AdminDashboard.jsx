@@ -7,7 +7,7 @@ import ImageUploadControl from "./ImageUploadControl";
 import SkillIcon from "../components/SkillIcon";
 import "./AdminDashboard.css";
 
-const API = process.env.REACT_APP_API_URL || "";
+const API = process.env.NODE_ENV === "production" ? "" : process.env.REACT_APP_API_URL || "";
 const tabs = ["Overview", "Profile & contact", "About", "Skills", "Projects"];
 const blankProject = () => ({ id: `project-${Date.now()}`, title: "New project", description: "", image: "", demoUrl: "", sourceUrl: "" });
 const readApiJson = async (response) => {
@@ -60,6 +60,8 @@ const AdminDashboard = () => {
       const response = await fetch(`${API}/api/admin/login`, { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, password }) });
       const result = await readApiJson(response);
       if (!response.ok) throw new Error(result.error || "Sign in failed.");
+      const sessionResponse = await fetch(`${API}/api/admin/session`, { credentials: "include" });
+      if (!sessionResponse.ok) throw new Error("Login succeeded, but the session cookie was not saved. Check the API deployment and try again.");
       setAuthenticated(true); setPassword("");
     } catch (error) { setNotice(error.message || "Could not reach the API. Check the backend is running."); }
     finally { setBusy(false); }

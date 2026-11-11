@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiUpload } from "react-icons/fi";
 
-const API = process.env.REACT_APP_API_URL || "";
+const API = process.env.NODE_ENV === "production" ? "" : process.env.REACT_APP_API_URL || "";
 
 const ImageUploadControl = ({ purpose, onUploaded }) => {
   const [status, setStatus] = useState("");

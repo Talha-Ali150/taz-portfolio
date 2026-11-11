@@ -21,6 +21,7 @@ if (missingEnv.length) {
 
 const app = express();
 const production = process.env.NODE_ENV === "production";
+const sessionMaxAge = 1000 * 60 * 60 * 24 * 30;
 const frontendOrigins = new Set(
   (process.env.FRONTEND_ORIGIN || "http://localhost:3000")
     .split(",")
@@ -55,8 +56,16 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({ clientPromise: mongoose.connection.asPromise().then((connection) => connection.getClient()), collectionName: "admin_sessions" }),
-  cookie: { httpOnly: true, secure: production, sameSite: production ? "none" : "lax", maxAge: 1000 * 60 * 60 * 8 },
+  rolling: true,
+  store: MongoStore.create({
+    clientPromise: mongoose.connection.asPromise().then((connection) => connection.getClient()),
+    collectionName: "admin_sessions",
+    ttl: sessionMaxAge / 1000,
+  }),
+  // The frontend and API are deployed on separate Vercel domains, so the
+  // browser needs a cross-site cookie in production. Secure is required by
+  // browsers whenever SameSite=None is used.
+  cookie: { httpOnly: true, secure: production, sameSite: production ? "none" : "lax", maxAge: sessionMaxAge },
 }));
 
 const requireAdmin = (req, res, next) => {
